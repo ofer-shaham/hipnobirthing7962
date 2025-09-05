@@ -68,7 +68,6 @@ export const heTranslations = {
         'טכניקות נשימה ושיטות הרפיה',
         'מעורבות ותמיכה של בן/בת הזוג',
         'הכנה ללידה וויזואליזציה',
-        '4 מפגשים שבועיים של 2.5 שעות כל אחד'
       ]
     },
     breastfeeding: {
@@ -102,10 +101,9 @@ export const heTranslations = {
     plans: {
       hypnobirthing: {
         title: 'הכנה ללידה בשיטת היפנובירת\'ינג',
-        sessions: '3 מפגשים אישיים',
+        sessions: '2 מפגשים',
         price: '2500',
         features: [
-          '3 מפגשים אישיים',
           'חומרי קורס מקיפים',
           'הקלטות הרפיה',
           'תמיכה בוואטסאפ לאורך ההריון',
@@ -129,7 +127,6 @@ export const heTranslations = {
         sessions: '2 מפגשים',
         price: '400',
         features: [
-          '2 מפגשים של שעתיים כל אחד',
           'זיהוי וזיהוי צלילי התינוק',
           'הנחיות מעשיות',
           'ייעוץ אישי זמין לאחר הקורס'
@@ -151,7 +148,6 @@ export const heTranslations = {
         sessions: '3 מפגשים',
         price: '300',
         features: [
-          '3 מפגשים של שעה וחצי כל אחד',
           'טכניקות עיסוי מעשיות',
           'חיזוק הקשר עם התינוק',
           'הרגעה וטיפוח'
@@ -174,48 +170,29 @@ export const heTranslations = {
         {
           title: 'הכנה ללידה בשיטת היפנובירת\'ינג',
           organization: 'לפי kghypnobirthing',
-          year: '2019'
+
         },
         {
           title: 'מדריכת הנקה מוסמכת',
-          organization: 'האיגוד הישראלי למקצועות ההנקה',
-          year: '2018'
+
         },
         {
           title: 'מדריכה מוסמכת לשפת התינוק דנסטן',
-          organization: 'Dunstan Baby Language',
-          year: '2020'
+
         },
         {
           title: 'יועצת שינה בגישת דנסטן',
-          organization: 'Dunstan Baby Language',
-          year: '2021'
+
         },
         {
           title: 'מדריכה לעיסוי תינוקות',
-          organization: 'האיגוד הישראלי לעיסוי תינוקות',
-          year: '2019'
-        }
+
       ]
     },
     achievements: {
       title: 'הישגים מקצועיים',
       items: [
-        {
-          title: 'דוברת מומחית',
-          description: 'כנס בינלאומי ללידה 2022',
-          year: '2022'
-        },
-        {
-          title: 'מחקר שפורסם',
-          description: 'השפעות היפנובירת\'ינג על תוצאות לידה',
-          year: '2021'
-        },
-        {
-          title: 'פרס קהילתי',
-          description: 'מצוינות בשירותי תמיכה לאמהות',
-          year: '2023'
-        }
+
       ]
     }
   },
