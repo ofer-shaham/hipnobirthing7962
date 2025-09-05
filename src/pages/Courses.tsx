@@ -236,7 +236,7 @@ export const Courses = () => {
                     }
                   }}
                 >
-                  צפה במחיר
+                  צפי במחיר
                 </Button>
               </CardContent>
             </Card>
