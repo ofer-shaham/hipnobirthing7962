@@ -39,6 +39,14 @@ export const Pricing = () => {
       icon: <Heart size={48} color="#D4A5A5" />
     },
     {
+      id: 'prebreastfeeding',
+      title: 'הכנה להנקה',
+      duration: '1.5 שעות',
+      sessions: '1 מפגש',
+      price: '300',
+      icon: <Baby size={48} color="#D4A5A5" />
+    },
+    {
       id: 'breastfeeding',
       title: 'הדרכת הנקה',
       duration: '1.5 שעות',
