@@ -32,7 +32,6 @@ export const Courses = () => {
         'טכניקות נשימה ושיטות הרפיה',
         'מעורבות ותמיכה של בן/בת הזוג',
         'הכנה ללידה וויזואליזציה',
-        '3 מפגשים אישיים של 2.5 שעות כל אחד'
       ],
       courseId: 'hypnobirthing'
     },
@@ -82,10 +81,9 @@ export const Courses = () => {
     {
       title: 'עיסוי תינוקות',
       description: 'טכניקות עיסוי לחיזוק הקשר עם התינוק ולהרגעתו',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: <Users size={48} color="#D4A5A5" />,
       details: [
-        '3 מפגשים של שעה וחצי כל אחד',
         'טכניקות עיסוי מעשיות',
         'חיזוק הקשר עם התינוק',
         'הרגעה וטיפוח'
