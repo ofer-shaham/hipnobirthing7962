@@ -12,13 +12,11 @@ export const Pricing = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Handle highlighting specific course when coming from documents page
     if (location.hash) {
       const courseId = location.hash.substring(1);
       const element = document.getElementById(courseId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        // Add temporary highlight effect
         element.style.backgroundColor = 'rgba(212, 165, 165, 0.2)';
         element.style.transition = 'background-color 0.3s ease';
         setTimeout(() => {
@@ -36,6 +34,7 @@ export const Pricing = () => {
       sessions: '2 מפגשים',
       price: '2500',
       insurance: 'קיים החזר מקופת החולים',
+      groupMeeting: '-',
       icon: <Heart size={48} color="#D4A5A5" />
     },
     {
@@ -44,6 +43,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '300',
+groupMeeting: '+',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -53,6 +53,7 @@ export const Pricing = () => {
       sessions: '1 מפגש',
       price: '400',
       insurance: 'קיים החזר מקופת החולים',
+groupMeeting: '-',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -61,6 +62,7 @@ export const Pricing = () => {
       duration: '2 שעות',
       sessions: '2 מפגשים',
       price: '400',
+groupMeeting: '-',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -69,6 +71,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '450',
+groupMeeting: '-',
       icon: <Moon size={48} color="#D4A5A5" />
     },
     {
@@ -77,6 +80,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '3 מפגשים',
       price: '300',
+groupMeeting: '+',
       icon: <Users size={48} color="#D4A5A5" />
     },
     {
@@ -85,6 +89,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '350',
+groupMeeting: '-',
       icon: <Sparkles size={48} color="#D4A5A5" />
     }
   ];
@@ -127,6 +132,9 @@ export const Pricing = () => {
               <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
                 עלות כוללת
               </TableCell>
+              <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
+                מפגש קבוצתי
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -147,6 +155,9 @@ export const Pricing = () => {
                 </TableCell>
                 <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', color: 'primary.main' }}>
                   ₪{course.price}
+                </TableCell>
+                <TableCell sx={{ textAlign: 'center', fontWeight: 'medium' }}>
+                  {course.groupMeeting}
                 </TableCell>
               </TableRow>
             ))}
@@ -199,7 +210,8 @@ export const Pricing = () => {
           </Typography>
         </DebugTooltip>
         <Typography variant="body2" color="primary" sx={{ mt: 1, fontWeight: 'medium' }}>
-קיים החזר כספי מקופת החולים לקורס הכנה ללידה (עד 75%) ולקורס הדרכת הנקה        </Typography>
+          קיים החזר כספי מקופת החולים לקורס הכנה ללידה (עד 75%) ולקורס הדרכת הנקה
+        </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
           לפרטים נוספים ולתיאום מפגש, אנא צרו קשר
         </Typography>
