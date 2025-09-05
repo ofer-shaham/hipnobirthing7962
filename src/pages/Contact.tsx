@@ -558,7 +558,7 @@ export const Contact = () => {
                       color="text.secondary"
                       sx={{ fontSize: '0.9rem' }}
                     >
-                      מדריכת לידה ויועצת הנקה מוסמכת
+                      מדריכה מוסמכת ללידה והנקה
                     </Typography>
                   </Box>
                 </Box>
