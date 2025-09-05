@@ -172,7 +172,7 @@ export const heTranslations = {
       title: 'הסמכות',
       items: [
         {
-          title: 'הכנה ללידה בשיטת היפנובירת\'ينג',
+          title: 'הכנה ללידה בשיטת היפנובירת\'ינג',
           organization: 'לפי kghypnobirthing',
           year: '2019'
         },
