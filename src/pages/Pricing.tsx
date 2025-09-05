@@ -33,7 +33,7 @@ export const Pricing = () => {
       id: 'hypnobirthing',
       title: 'הכנה ללידה בשיטת היפנובירת\'ינג',
       duration: '2 שעות',
-      sessions: '3 מפגשים',
+      sessions: '2 מפגשים',
       price: '2500',
       insurance: 'קיים החזר מקופת החולים',
       icon: <Heart size={48} color="#D4A5A5" />
@@ -44,6 +44,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '400',
+      insurance: 'קיים החזר מקופת החולים',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -67,7 +68,7 @@ export const Pricing = () => {
       title: 'עיסוי תינוקות',
       duration: '1.5 שעות',
       sessions: '3 מפגשים',
-      price: '400',
+      price: '300',
       icon: <Users size={48} color="#D4A5A5" />
     },
     {
