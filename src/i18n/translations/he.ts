@@ -185,7 +185,7 @@ export const heTranslations = {
         },
         {
           title: 'מדריכה לעיסוי תינוקות',
-
+        }
       ]
     },
     achievements: {
