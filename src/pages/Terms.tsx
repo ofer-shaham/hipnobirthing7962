@@ -4,73 +4,73 @@ import { useTranslation } from 'react-i18next';
 import { FileText, AlertCircle, Users, CreditCard, Shield, Phone } from 'lucide-react';
 
 export const Terms = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const isRTL = i18n.language === 'he';
 
   const sections = [
     {
       icon: <FileText size={24} color="#D4A5A5" />,
-      title: 'הגדרות כלליות',
-      content: 'השירותים כוללים הכנה ללידה, הדרכת הנקה ועיסוי תינוקות. השימוש מהווה הסכמה לתנאים.'
+      title: t('terms.sections.general.title'),
+      content: t('terms.sections.general.content')
     },
     {
       icon: <Users size={24} color="#D4A5A5" />,
-      title: 'השירותים',
-      content: 'קורסי הכנה ללידה, הדרכת הנקה, שפת דנסטן ועיסוי תינוקות על ידי מדריכה מוסמכת.'
+      title: t('terms.sections.services.title'),
+      content: t('terms.sections.services.content')
     },
     {
       icon: <CreditCard size={24} color="#D4A5A5" />,
-      title: 'תשלומים',
-      content: 'תשלום מראש. ביטול עד 48 שעות - החזר מלא. פחות מ-24 שעות - ללא החזר.'
+      title: t('terms.sections.payments.title'),
+      content: t('terms.sections.payments.content')
     },
     {
       icon: <AlertCircle size={24} color="#D4A5A5" />,
-      title: 'אחריות',
-      content: 'השירותים למטרות חינוכיות בלבד. אינם תחליף לייעוץ רפואי. יש להתייעץ עם רופא.'
+      title: t('terms.sections.liability.title'),
+      content: t('terms.sections.liability.content')
     },
     {
       icon: <Shield size={24} color="#D4A5A5" />,
-      title: 'סודיות',
-      content: 'המידע נשמר בסודיות מוחלטת ולא מועבר לצדדים שלישיים.'
+      title: t('terms.sections.privacy.title'),
+      content: t('terms.sections.privacy.content')
     },
     {
       icon: <Phone size={24} color="#D4A5A5" />,
-      title: 'יצירת קשר',
-      content: 'לשאלות: 052-620-5052, maryza1982@gmail.com. החוק הישראלי חל על התנאים.'
+      title: t('terms.sections.contact.title'),
+      content: t('terms.sections.contact.content')
     }
   ];
 
   return (
     <Container maxWidth="lg" sx={{ py: 8 }} dir={isRTL ? 'rtl' : 'ltr'}>
       <Typography variant="h2" color="primary" sx={{ textAlign: 'center', mb: 6, fontWeight: 'bold' }}>
-        תנאי שירות
+        {t('terms.title')}
       </Typography>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
         {sections.map((section, index) => (
-          <Paper key={index} elevation={2} sx={{ p: 4, borderRadius: '16px' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: isRTL ? 'row-reverse' : 'row', gap: 2, mb: 2 }}>
+          <Paper key={index} elevation={3} sx={{ p: 3, borderRadius: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               {section.icon}
-              <Typography variant="h5" color="primary" sx={{ fontWeight: 'bold' }}>
+              <Typography variant="h6" color="primary" sx={{ ml: isRTL ? 0 : 2, mr: isRTL ? 2 : 0, fontWeight: 'bold' }}>
                 {section.title}
               </Typography>
             </Box>
-            <Typography variant="body1" sx={{ textAlign: isRTL ? 'right' : 'left', lineHeight: 1.6 }}>
+            <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
               {section.content}
             </Typography>
           </Paper>
         ))}
       </Box>
 
-      <Paper elevation={2} sx={{ p: 4, mt: 4, borderRadius: '16px', backgroundColor: 'rgba(212, 165, 165, 0.1)' }}>
+      <Paper elevation={3} sx={{ p: 3, mt: 4, borderRadius: 2, backgroundColor: '#FFF8E1' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
           <AlertCircle size={24} color="#D4A5A5" />
           <Typography variant="h6" color="primary" sx={{ ml: isRTL ? 0 : 1, mr: isRTL ? 1 : 0, fontWeight: 'bold' }}>
-            הודעה חשובה
+            {t('terms.importantNotice.title')}
           </Typography>
         </Box>
         <Typography variant="body1" sx={{ textAlign: 'center', lineHeight: 1.6 }}>
-          השירותים מיועדים לתמיכה והדרכה בלבד ואינם תחליף לטיפול רפואי.
+          {t('terms.importantNotice.content')}
         </Typography>
       </Paper>
     </Container>
