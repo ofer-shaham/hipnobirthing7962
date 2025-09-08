@@ -81,7 +81,7 @@ export const Pricing = () => {
       price: '300',
       groupMeeting: true,
       insurance: false,
-      icon: '🧴'
+      icon: '👐'
     },
     {
       id: 'weaning',
