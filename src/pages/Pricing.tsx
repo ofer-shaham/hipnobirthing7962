@@ -172,84 +172,94 @@ groupMeeting: '-',
 
       {/* Minimalistic Table for Mobile */}
       {isMobile && (
-        <TableContainer component={Paper} sx={{ mb: 6, borderRadius: '20px', overflow: 'hidden' }}>
-          <Table>
-            <TableHead sx={{ backgroundColor: 'rgba(212, 165, 165, 0.1)' }}>
-              <TableRow>
-                <TableCell
-                  sx={{
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    whiteSpace: 'normal',
-                    overflowWrap: 'break-word',
-                    wordBreak: 'keep-all', // <-- Prevents breaking inside words
-                    px: 1,
-                  }}
-                >
-                  שעות המפגש
-                </TableCell>
-                <TableCell
-                  sx={{
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    whiteSpace: 'normal',
-                    overflowWrap: 'break-word',
-                    wordBreak: 'keep-all',
-                    px: 1,
-                  }}
-                >
-                  מספר מפגשים
-                </TableCell>
-                <TableCell
-                  sx={{
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    whiteSpace: 'normal',
-                    overflowWrap: 'break-word',
-                    wordBreak: 'keep-all',
-                    px: 1,
-                  }}
-                >
-                  עלות כוללת
-                </TableCell>
-                <TableCell
-                  sx={{
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    whiteSpace: 'normal',
-                    overflowWrap: 'break-word',
-                    wordBreak: 'keep-all',
-                    px: 1,
-                  }}
-                >
-                  מפגש קבוצתי
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {courses.map((course, index) => (
-                <TableRow
-                  key={index}
-                  id={course.id}
-                  sx={{ '&:hover': { backgroundColor: 'rgba(212, 165, 165, 0.05)' } }}
-                >
-                  <TableCell sx={{ textAlign: 'center' }}>
-                    {parseFloat(course.duration)}
+        <Box sx={{ width: '100%', overflowX: 'auto' }}>
+          <TableContainer
+            component={Paper}
+            sx={{
+              mb: 6,
+              borderRadius: '20px',
+              minWidth: 600, // Ensures table is wide enough to scroll if needed
+              width: 'max-content',
+            }}
+          >
+            <Table>
+              <TableHead sx={{ backgroundColor: 'rgba(212, 165, 165, 0.1)' }}>
+                <TableRow>
+                  <TableCell
+                    sx={{
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      whiteSpace: 'normal',
+                      overflowWrap: 'break-word',
+                      wordBreak: 'keep-all',
+                      px: 1,
+                    }}
+                  >
+                    שעות המפגש
                   </TableCell>
-                  <TableCell sx={{ textAlign: 'center' }}>
-                    {parseInt(course.sessions)}
+                  <TableCell
+                    sx={{
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      whiteSpace: 'normal',
+                      overflowWrap: 'break-word',
+                      wordBreak: 'keep-all',
+                      px: 1,
+                    }}
+                  >
+                    מספר מפגשים
                   </TableCell>
-                  <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', color: 'primary.main' }}>
-                    {course.price}
+                  <TableCell
+                    sx={{
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      whiteSpace: 'normal',
+                      overflowWrap: 'break-word',
+                      wordBreak: 'keep-all',
+                      px: 1,
+                    }}
+                  >
+                    עלות כוללת
                   </TableCell>
-                  <TableCell sx={{ textAlign: 'center' }}>
-                    {course.groupMeeting}
+                  <TableCell
+                    sx={{
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      whiteSpace: 'normal',
+                      overflowWrap: 'break-word',
+                      wordBreak: 'keep-all',
+                      px: 1,
+                    }}
+                  >
+                    מפגש קבוצתי
                   </TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {courses.map((course, index) => (
+                  <TableRow
+                    key={index}
+                    id={course.id}
+                    sx={{ '&:hover': { backgroundColor: 'rgba(212, 165, 165, 0.05)' } }}
+                  >
+                    <TableCell sx={{ textAlign: 'center' }}>
+                      {parseFloat(course.duration)}
+                    </TableCell>
+                    <TableCell sx={{ textAlign: 'center' }}>
+                      {parseInt(course.sessions)}
+                    </TableCell>
+                    <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', color: 'primary.main' }}>
+                      {course.price}
+                    </TableCell>
+                    <TableCell sx={{ textAlign: 'center' }}>
+                      {course.groupMeeting}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
       )}
 
       {/* Cards Format for Mobile */}

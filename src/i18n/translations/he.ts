@@ -131,7 +131,7 @@ export const heTranslations = {
   },
   pricing: {
     title: 'מחירון הקורסים',
-    subtitle: 'בחרי את התמיכה המתאימה ביותר לצרכים שלך',
+    subtitle: 'בחרי את התמיכה המתאימה לך ביותר',
     plans: {
       hypnobirthing: {
         title: 'הכנה ללידה בשיטת היפנובירת\'ינג',
