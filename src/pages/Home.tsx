@@ -109,7 +109,6 @@ export const Home = () => {
             <DebugTooltip jsonPath="animation_text.json > introduction.name">
               <Typography
                 variant="h1"
-                sx={{ color: heroDesign.textColor }}
                 sx={{
                   color: heroDesign.textColor,
                   fontSize: { xs: '2.5rem', md: '4rem' },

@@ -43,7 +43,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '300',
-groupMeeting: '+',
+      groupMeeting: '+',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -52,8 +52,7 @@ groupMeeting: '+',
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '400',
-      insurance: 'קיים החזר מקופת החולים',
-groupMeeting: '-',
+      groupMeeting: '-',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -62,16 +61,17 @@ groupMeeting: '-',
       duration: '2 שעות',
       sessions: '2 מפגשים',
       price: '400',
-groupMeeting: '-',
+      groupMeeting: '-',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
       id: 'sleep',
-      title: 'יועצת שינה בגישת דנסטן',
+      title: 'ייעוץ שינה בגישת דנסטן',
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '450',
-groupMeeting: '-',
+      insurance: 'קיים החזר מקופת החולים',
+      groupMeeting: '-',
       icon: <Moon size={48} color="#D4A5A5" />
     },
     {
@@ -80,7 +80,7 @@ groupMeeting: '-',
       duration: '1.5 שעות',
       sessions: '3 מפגשים',
       price: '300',
-groupMeeting: '+',
+      groupMeeting: '+',
       icon: <Users size={48} color="#D4A5A5" />
     },
     {
@@ -89,7 +89,7 @@ groupMeeting: '+',
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '350',
-groupMeeting: '-',
+      groupMeeting: '-',
       icon: <Sparkles size={48} color="#D4A5A5" />
     }
   ];
@@ -132,7 +132,7 @@ groupMeeting: '-',
               <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
                 עלות כוללת
               </TableCell>
-              <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
+              <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center', display: { xs: 'none', md: 'table-cell' } }}>
                 מפגש קבוצתי
               </TableCell>
             </TableRow>
@@ -151,12 +151,12 @@ groupMeeting: '-',
                   {course.duration}
                 </TableCell>
                 <TableCell sx={{ textAlign: 'center' }}>
-                  {course.sessions}
+                  {course.sessions}{course.groupMeeting === '+' ? ' (מפגש קבוצתי)' : ''}
                 </TableCell>
                 <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', color: 'primary.main' }}>
                   ₪{course.price}
                 </TableCell>
-                <TableCell sx={{ textAlign: 'center', fontWeight: 'medium' }}>
+                <TableCell sx={{ textAlign: 'center', fontWeight: 'medium', display: { xs: 'none', md: 'table-cell' } }}>
                   {course.groupMeeting}
                 </TableCell>
               </TableRow>
@@ -182,7 +182,7 @@ groupMeeting: '-',
                   </Box>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1 }}>
                     <Typography variant="body2" color="text.secondary">
-                      {course.duration} • {course.sessions}
+                      {course.duration} • {course.sessions}{course.groupMeeting === '+' ? ' (מפגש קבוצתי)' : ''}
                     </Typography>
                     <Typography variant="h6" color="primary" sx={{ fontWeight: 'bold' }}>
                       ₪{course.price}
@@ -213,7 +213,7 @@ groupMeeting: '-',
           קיים החזר כספי מקופת החולים לקורס הכנה ללידה (עד 75%) ולקורס הדרכת הנקה
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-          לפרטים נוספים ולתיאום מפגש, אנא צרו קשר
+          לפרטים נוספים ולתיאום מפגש, אנא צרי קשר
         </Typography>
       </Box>
     </Container>

@@ -81,7 +81,7 @@ export const Courses = () => {
     {
       title: 'עיסוי תינוקות',
       description: 'טכניקות עיסוי לחיזוק הקשר עם התינוק ולהרגעתו',
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/img/baby.massage.rotated.jpg',
       icon: <Users size={48} color="#D4A5A5" />,
       details: [
         'טכניקות עיסוי מעשיות',
