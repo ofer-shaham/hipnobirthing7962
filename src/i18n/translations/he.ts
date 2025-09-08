@@ -1,5 +1,5 @@
 export const heTranslations = {
-  terms: {
+   terms: {
     title: 'תנאי שירות',
     sections: {
       general: {
@@ -32,9 +32,7 @@ export const heTranslations = {
       content: 'השירותים מיועדים לתמיכה והדרכה בלבד ואינם תחליף לטיפול רפואי.'
     }
   }
-};
-
-export const heTranslations2 = {
+,
   navigation: {
     home: 'בית',
     about: 'אודותי',
