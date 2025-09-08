@@ -5,11 +5,13 @@ import { Container, Typography, Box, Grid, Card, CardContent, Paper, Table, Tabl
 import { useTranslation } from 'react-i18next';
 import { Check, Heart, Baby, Users, Moon, Sparkles } from 'lucide-react';
 import { DebugTooltip } from '../components/Debug/DebugTooltip';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export const Pricing = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === 'he';
   const location = useLocation();
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   useEffect(() => {
     if (location.hash) {
@@ -43,7 +45,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '300',
-      groupMeeting: '+',
+groupMeeting: '+',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -52,7 +54,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '400',
-      groupMeeting: '-',
+groupMeeting: '-',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -61,7 +63,7 @@ export const Pricing = () => {
       duration: '2 שעות',
       sessions: '2 מפגשים',
       price: '400',
-      groupMeeting: '-',
+groupMeeting: '-',
       icon: <Baby size={48} color="#D4A5A5" />
     },
     {
@@ -70,8 +72,9 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '450',
-      insurance: 'קיים החזר מקופת החולים',
-      groupMeeting: '-',
+            insurance: 'קיים החזר מקופת החולים',
+
+groupMeeting: '-',
       icon: <Moon size={48} color="#D4A5A5" />
     },
     {
@@ -80,7 +83,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '3 מפגשים',
       price: '300',
-      groupMeeting: '+',
+groupMeeting: '+',
       icon: <Users size={48} color="#D4A5A5" />
     },
     {
@@ -89,7 +92,7 @@ export const Pricing = () => {
       duration: '1.5 שעות',
       sessions: '1 מפגש',
       price: '350',
-      groupMeeting: '-',
+groupMeeting: '-',
       icon: <Sparkles size={48} color="#D4A5A5" />
     }
   ];
@@ -116,54 +119,138 @@ export const Pricing = () => {
       </DebugTooltip>
 
       {/* Table Format */}
-      <TableContainer component={Paper} sx={{ mb: 6, borderRadius: '20px', overflow: 'hidden' }}>
-        <Table>
-          <TableHead sx={{ backgroundColor: 'rgba(212, 165, 165, 0.1)' }}>
-            <TableRow>
-              <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: isRTL ? 'right' : 'left' }}>
-                שם הקורס
-              </TableCell>
-              <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
-                שעות המפגש
-              </TableCell>
-              <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
-                מספר מפגשים
-              </TableCell>
-              <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
-                עלות כוללת
-              </TableCell>
-              <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center', display: { xs: 'none', md: 'table-cell' } }}>
-                מפגש קבוצתי
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {courses.map((course, index) => (
-              <TableRow 
-                key={index} 
-                id={course.id}
-                sx={{ '&:hover': { backgroundColor: 'rgba(212, 165, 165, 0.05)' } }}
-              >
-                <TableCell sx={{ textAlign: isRTL ? 'right' : 'left', fontWeight: 'medium' }}>
-                  {course.title}
+      {!isMobile && (
+        <TableContainer component={Paper} sx={{ mb: 6, borderRadius: '20px', overflow: 'hidden' }}>
+          <Table>
+            <TableHead sx={{ backgroundColor: 'rgba(212, 165, 165, 0.1)' }}>
+              <TableRow>
+                <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: isRTL ? 'right' : 'left' }}>
+                  שם הקורס
                 </TableCell>
-                <TableCell sx={{ textAlign: 'center' }}>
-                  {course.duration}
+                <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
+                  שעות המפגש
                 </TableCell>
-                <TableCell sx={{ textAlign: 'center' }}>
-                  {course.sessions}{course.groupMeeting === '+' ? ' (מפגש קבוצתי)' : ''}
+                <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
+                  מספר מפגשים
                 </TableCell>
-                <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', color: 'primary.main' }}>
-                  ₪{course.price}
+                <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
+                  עלות כוללת
                 </TableCell>
-                <TableCell sx={{ textAlign: 'center', fontWeight: 'medium', display: { xs: 'none', md: 'table-cell' } }}>
-                  {course.groupMeeting}
+                <TableCell sx={{ fontWeight: 'bold', fontSize: '1.1rem', textAlign: 'center' }}>
+                  מפגש קבוצתי
                 </TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {courses.map((course, index) => (
+                <TableRow 
+                  key={index} 
+                  id={course.id}
+                  sx={{ '&:hover': { backgroundColor: 'rgba(212, 165, 165, 0.05)' } }}
+                >
+                  <TableCell sx={{ textAlign: isRTL ? 'right' : 'left', fontWeight: 'medium' }}>
+                    {course.title}
+                  </TableCell>
+                  <TableCell sx={{ textAlign: 'center' }}>
+                    {course.duration}
+                  </TableCell>
+                  <TableCell sx={{ textAlign: 'center' }}>
+                    {course.sessions}
+                  </TableCell>
+                  <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', color: 'primary.main' }}>
+                    ₪{course.price}
+                  </TableCell>
+                  <TableCell sx={{ textAlign: 'center', fontWeight: 'medium' }}>
+                    {course.groupMeeting}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
+
+      {/* Minimalistic Table for Mobile */}
+      {isMobile && (
+        <TableContainer component={Paper} sx={{ mb: 6, borderRadius: '20px', overflow: 'hidden' }}>
+          <Table>
+            <TableHead sx={{ backgroundColor: 'rgba(212, 165, 165, 0.1)' }}>
+              <TableRow>
+                <TableCell
+                  sx={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    whiteSpace: 'normal',
+                    overflowWrap: 'break-word',
+                    wordBreak: 'keep-all', // <-- Prevents breaking inside words
+                    px: 1,
+                  }}
+                >
+                  שעות המפגש
+                </TableCell>
+                <TableCell
+                  sx={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    whiteSpace: 'normal',
+                    overflowWrap: 'break-word',
+                    wordBreak: 'keep-all',
+                    px: 1,
+                  }}
+                >
+                  מספר מפגשים
+                </TableCell>
+                <TableCell
+                  sx={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    whiteSpace: 'normal',
+                    overflowWrap: 'break-word',
+                    wordBreak: 'keep-all',
+                    px: 1,
+                  }}
+                >
+                  עלות כוללת
+                </TableCell>
+                <TableCell
+                  sx={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    whiteSpace: 'normal',
+                    overflowWrap: 'break-word',
+                    wordBreak: 'keep-all',
+                    px: 1,
+                  }}
+                >
+                  מפגש קבוצתי
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {courses.map((course, index) => (
+                <TableRow
+                  key={index}
+                  id={course.id}
+                  sx={{ '&:hover': { backgroundColor: 'rgba(212, 165, 165, 0.05)' } }}
+                >
+                  <TableCell sx={{ textAlign: 'center' }}>
+                    {parseFloat(course.duration)}
+                  </TableCell>
+                  <TableCell sx={{ textAlign: 'center' }}>
+                    {parseInt(course.sessions)}
+                  </TableCell>
+                  <TableCell sx={{ textAlign: 'center', fontWeight: 'bold', color: 'primary.main' }}>
+                    {course.price}
+                  </TableCell>
+                  <TableCell sx={{ textAlign: 'center' }}>
+                    {course.groupMeeting}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
 
       {/* Cards Format for Mobile */}
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
@@ -182,7 +269,7 @@ export const Pricing = () => {
                   </Box>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1 }}>
                     <Typography variant="body2" color="text.secondary">
-                      {course.duration} • {course.sessions}{course.groupMeeting === '+' ? ' (מפגש קבוצתי)' : ''}
+                      {parseFloat(course.duration)} • {parseInt(course.sessions)}
                     </Typography>
                     <Typography variant="h6" color="primary" sx={{ fontWeight: 'bold' }}>
                       ₪{course.price}
@@ -210,10 +297,10 @@ export const Pricing = () => {
           </Typography>
         </DebugTooltip>
         <Typography variant="body2" color="primary" sx={{ mt: 1, fontWeight: 'medium' }}>
-          קיים החזר כספי מקופת החולים לקורס הכנה ללידה (עד 75%) ולקורס הדרכת הנקה
+          קיים החזר כספי מקופת החולים לקורס הכנה ללידה (עד 75%) ולקורס ייעוץ שינה
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-          לפרטים נוספים ולתיאום מפגש, אנא צרי קשר
+          לפרטים נוספים ולתיאום מפגש, אנא צרו קשר
         </Typography>
       </Box>
     </Container>
