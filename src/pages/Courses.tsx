@@ -106,7 +106,7 @@ export const Courses = () => {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }} dir={isRTL ? 'rtl' : 'ltr'}>
+    <Container maxWidth="lg" sx={{ py: 8, overflowX: 'hidden' }} dir={isRTL ? 'rtl' : 'ltr'}>
       <Typography variant="h2" gutterBottom color="primary" textAlign="center" sx={{ mb: 6 }}>
         {t('courses.title')}
       </Typography>

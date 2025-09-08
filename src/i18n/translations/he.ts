@@ -93,7 +93,7 @@ export const heTranslations = {
     }
   },
   courses: {
-    title: 'הקורסים שלנו',
+    title: 'הקורסים שלי',
     hypnobirthing: {
       title: 'הכנה ללידה בשיטת היפנובירת\'ינג',
       description: 'למדי טכניקות לחוויית לידה רגועה ומעצימה',
