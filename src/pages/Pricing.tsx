@@ -99,6 +99,10 @@ export const Pricing = () => {
     <Container sx={{ py: 4 }} dir={isRTL ? 'rtl' : 'ltr'}>
       <Typography variant="h4" sx={{ textAlign: 'center', mb: 2 }}>{t('pricing.title')}</Typography>
 
+      <Typography variant="body2" color="primary" sx={{ mt: 1, mb: 4, fontWeight: 'medium', textAlign: 'center' }}>
+        קיים החזר כספי מקופת החולים לקורס הכנה ללידה (עד 75%) ולקורס ייעוץ שינה
+      </Typography>
+
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -111,7 +115,6 @@ export const Pricing = () => {
               <TableCell sx={cellSx}>החזר מקופת החולים</TableCell>
             </TableRow>
           </TableHead>
-
           <TableBody>
             {courses.map((c, idx) => (
               <TableRow
