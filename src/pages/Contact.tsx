@@ -57,7 +57,7 @@ export const Contact = () => {
       title: 'האיגוד הישראלי למקצועות ההנקה',
       handle: 'פרופיל מקצועי',
       link: 'https://ialp.org.il/counselors/%D7%9E%D7%90%D7%A8%D7%99%D7%90%D7%A0%D7%94-%D7%A9%D7%97%D7%9D/',
-      description: 'אישור מקצועי ואמינות',
+      // description: 'אישור מקצועי ואמינות',
       verified: true
     }
   ];
@@ -94,7 +94,7 @@ export const Contact = () => {
                 fontSize: { xs: '1.1rem', md: '1.25rem' }
               }}
             >
-              בחרי את הדרך הנוחה לך ביותר ליצירת קשר
+             
             </Typography>
           </DebugTooltip>
         </Box>
@@ -133,7 +133,7 @@ export const Contact = () => {
                     fontSize: '1.1rem'
                   }}
                 >
-                  בחרי את הדרך הנוחה לך ביותר ליצירת קשר
+                 
                 </Typography>
               </Box>
               

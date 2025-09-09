@@ -9,10 +9,16 @@ export const Pricing = () => {
   const location = useLocation();
   const isMobile = useMediaQuery('(max-width:600px)');
 
+  const [selectedId, setSelectedId] = React.useState<string | null>(null);
+
   useEffect(() => {
     if (location.hash) {
-      const el = document.getElementById(location.hash.slice(1));
+      const id = location.hash.slice(1);
+      setSelectedId(id);
+      const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      setSelectedId(null);
     }
   }, [location.hash]);
 
@@ -117,19 +123,24 @@ export const Pricing = () => {
           </TableHead>
           <TableBody>
             {courses.map((c, idx) => (
-              <TableRow
-                key={c.id}
-                id={c.id}
-                sx={{
-                  backgroundColor: idx % 2 === 0 ? 'rgba(212,165,165,0.04)' : 'inherit',
-                  // Do not override hover/selected colors
-                  '&:hover': {
-                    backgroundColor: 'rgba(212,165,165,0.10)',
-                  },
-                  '&.Mui-selected, &.Mui-selected:hover': {
-                    backgroundColor: 'rgba(212,165,165,0.18)',
-                  },
-                }}
+                <TableRow
+                  key={c.id}
+                  id={c.id}
+                  sx={{
+                    backgroundColor: selectedId === c.id
+                      ? 'rgba(212,165,165,0.28)'
+                      : idx % 2 === 0
+                        ? 'rgba(212,165,165,0.04)'
+                        : 'inherit',
+                    border: selectedId === c.id ? '2.5px solid #D4A5A5' : undefined,
+                    boxShadow: selectedId === c.id ? '0 0 0 4px rgba(212,165,165,0.15)' : undefined,
+                    transition: 'background-color 0.3s, border 0.3s, box-shadow 0.3s',
+                    '&:hover': {
+                      backgroundColor: selectedId === c.id
+                        ? 'rgba(212,165,165,0.32)'
+                        : 'rgba(212,165,165,0.10)',
+                    },
+                  }}
               >
                 <TableCell sx={{ ...cellSx, textAlign: isRTL ? 'right' : 'left' }}>
                   <span style={{

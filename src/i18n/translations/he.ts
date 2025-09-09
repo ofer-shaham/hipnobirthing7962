@@ -214,8 +214,8 @@ export const heTranslations = {
 
         },
         {
-          title: 'יועצת שינה בגישת דנסטן',
-
+          title:  'יועצת שינה',
+          organization: 'בגישת דנסטן',
         },
         {
           title: 'מדריכה לעיסוי תינוקות',

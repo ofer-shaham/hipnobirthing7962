@@ -102,7 +102,7 @@ export const Documents = () => {
             {doc.icon}
             <ListItemText
               primary={doc.title}
-              secondary={`${doc.organization || doc.description} • ${doc.year}`}
+              secondary={`${doc.organization } • ${doc.year}`}
               primaryTypographyProps={{ fontWeight: 'bold' }}
             />
             {doc.courseMapping && (
@@ -136,7 +136,7 @@ export const Documents = () => {
                 {doc.title}
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                {doc.organization || doc.description}
+                {doc.organization }
               </Typography>
               <Typography variant="caption">
                 {doc.year}
@@ -173,7 +173,7 @@ export const Documents = () => {
           </StepLabel>
           <StepContent>
             <Typography color="text.secondary" sx={{ mb: 1 }}>
-              {doc.organization || doc.description}
+              {doc.organization  }
             </Typography>
             <Typography variant="body2">
               {doc.year}
@@ -223,7 +223,7 @@ export const Documents = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography color="text.secondary" sx={{ mb: 1 }}>
-              {doc.organization || doc.description}
+              {doc.organization }
             </Typography>
             <Typography variant="body2">
               {doc.year}
@@ -281,35 +281,80 @@ export const Documents = () => {
     </>
   );
 
-  const renderContent = () => {
-    switch (currentDesign) {
-      case 'carousel':
-        return renderCarouselView();
-      case 'list':
-        return renderListView();
-      case 'cards':
-        return renderCardLayout();
-      case 'timeline':
-        return renderTimelineView();
-      case 'accordion':
-        return renderAccordionStyle();
-      default:
-        return renderDefaultView();
-    }
-  };
+  // Simple presentation: just a clean list
+  const renderSimpleQualifications = () => (
+    <Box sx={{ mt: 4 }}>
+      <Typography
+        variant="h2"
+        gutterBottom
+        color="primary"
+        textAlign="center"
+        sx={{ mb: 6 }}
+      >
+        {'ההסמכות שלי'}
+      </Typography>
+      <List sx={{ direction: isRTL ? 'rtl' : 'ltr' }}>
+        {certifications.map((cert: any, idx: number) => {
+          const secondaryText = cert.organization && cert.year
+            ? `${cert.organization} • ${cert.year}`
+            : cert.organization || cert.year || '';
+          return (
+            <React.Fragment key={idx}>
+              <ListItem sx={{ mb: 1, flexDirection: isRTL ? 'row-reverse' : 'row', alignItems: 'center' }}>
+                <Box sx={{ minWidth: 36, display: 'flex', justifyContent: 'center', alignItems: 'center', mr: isRTL ? 0 : 2, ml: isRTL ? 2 : 0 }}>
+                  <GraduationCap size={28} color="#D4A5A5" />
+                </Box>
+                <ListItemText
+                  primary={cert.title}
+                  secondary={secondaryText}
+                  primaryTypographyProps={{ fontWeight: 'bold', textAlign: isRTL ? 'right' : 'left' }}
+                  secondaryTypographyProps={{ textAlign: isRTL ? 'right' : 'left' }}
+                />
+              </ListItem>
+              {idx < certifications.length - 1 && <Box sx={{ borderBottom: '1px solid #eee', mx: 2 }} />}
+            </React.Fragment>
+          );
+        })}
+      </List>
+      <List sx={{ direction: isRTL ? 'rtl' : 'ltr' }}>
+        {achievements.map((ach: any, idx: number) => {
+          const secondaryText = ach.description && ach.year
+            ? `${ach.description} • ${ach.year}`
+            : ach.description || ach.year || '';
+          return (
+            <React.Fragment key={idx}>
+              <ListItem sx={{ mb: 1, flexDirection: isRTL ? 'row-reverse' : 'row', alignItems: 'center' }}>
+                <Box sx={{ minWidth: 36, display: 'flex', justifyContent: 'center', alignItems: 'center', mr: isRTL ? 0 : 2, ml: isRTL ? 2 : 0 }}>
+                  <Award size={28} color="#E6B89C" />
+                </Box>
+                <ListItemText
+                  primary={ach.title}
+                  secondary={secondaryText}
+                  primaryTypographyProps={{ fontWeight: 'bold', textAlign: isRTL ? 'right' : 'left' }}
+                  secondaryTypographyProps={{ textAlign: isRTL ? 'right' : 'left' }}
+                />
+              </ListItem>
+              {idx < achievements.length - 1 && <Box sx={{ borderBottom: '1px solid #eee', mx: 2 }} />}
+            </React.Fragment>
+          );
+        })}
+      </List>
+    </Box>
+  );
 
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }} dir={isRTL ? 'rtl' : 'ltr'}>
-      <DocumentsDesignNavigation 
-        currentDesign={currentDesign}
-        onDesignChange={setCurrentDesign}
-      />
-      
-      <Typography variant="h2" gutterBottom color="primary" textAlign={isRTL ? 'right' : 'left'}>
-        {t('documents.title')}
-      </Typography>
-
-      {renderContent()}
-    </Container>
+    <Box
+      sx={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #f8f6f4 0%, #f3e7e9 100%)',
+        py: 0,
+        px: 0,
+        position: 'relative',
+      }}
+    >
+      <Container maxWidth="sm" sx={{ py: { xs: 4, md: 8 }, px: { xs: 1, md: 3 }, boxShadow: 2, borderRadius: 3, background: 'rgba(255,255,255,0.97)', mt: { xs: 2, md: 6 }, mb: { xs: 2, md: 6 } }} dir={isRTL ? 'rtl' : 'ltr'}>
+        {renderSimpleQualifications()}
+      </Container>
+    </Box>
   );
 };

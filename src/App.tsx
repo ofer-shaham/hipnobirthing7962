@@ -15,6 +15,7 @@ import { Contact } from './pages/Contact';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import './i18n/i18n';
+import './App.css';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
