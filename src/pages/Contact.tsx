@@ -114,13 +114,14 @@ export const Contact = () => {
             >
               <Box sx={{ mb: 5 }}>
                 <Typography 
-                  variant="h3" 
+                  variant="h5" 
                   color="primary" 
                   sx={{ 
                     fontWeight: 700,
                     textAlign: isRTL ? 'right' : 'left',
-                    fontSize: { xs: '1.75rem', md: '2.125rem' },
-                    mb: 1
+                    fontSize: { xs: '1.5rem', md: '1.75rem' },
+                    mb: 1,
+                    lineHeight: 1.2
                   }}
                 >
                   דרכי התקשרות
@@ -300,13 +301,14 @@ export const Contact = () => {
                 }}
               >
                 <Typography 
-                  variant="h4" 
+                  variant="h5" 
                   color="primary" 
                   sx={{ 
                     mb: 4,
                     fontWeight: 700,
                     textAlign: isRTL ? 'right' : 'left',
-                    fontSize: { xs: '1.5rem', md: '1.75rem' }
+                    fontSize: { xs: '1.5rem', md: '1.75rem' },
+                    lineHeight: 1.2
                   }}
                 >
                   עקבי אחריי
@@ -444,8 +446,9 @@ export const Contact = () => {
                       color="primary"
                       sx={{
                         fontWeight: 700,
-                        fontSize: '1.25rem',
-                        textAlign: 'left'
+                        fontSize: { xs: '1.5rem', md: '1.75rem' },
+                        textAlign: 'left',
+                        lineHeight: 1.2
                       }}
                     >
                       שעות פעילות
