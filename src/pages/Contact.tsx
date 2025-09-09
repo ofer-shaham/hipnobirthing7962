@@ -309,7 +309,7 @@ export const Contact = () => {
                     fontSize: { xs: '1.5rem', md: '1.75rem' }
                   }}
                 >
-                  עקבו אחריי
+                  עקבי אחריי
                 </Typography>
                 
                 {socialLinks.map((social, index) => (
@@ -426,15 +426,31 @@ export const Contact = () => {
                   boxShadow: '0 8px 32px rgba(212, 165, 165, 0.12)'
                 }}
               >
-                <Box 
-                  sx={{ 
-                    display: 'flex', 
+                <Box
+                  sx={{
+                    display: 'flex',
                     alignItems: 'center',
-                    flexDirection: isRTL ? 'row-reverse' : 'row',
+                    flexDirection: 'row',
+                    justifyContent: isRTL ? 'space-between' : 'flex-start',
                     gap: 3,
-                    mb: 4
+                    mb: 4,
+                    width: '100%'
                   }}
                 >
+                  {/* Office Hours header: text left, icon right, regardless of RTL */}
+                  <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+                    <Typography
+                      variant="h5"
+                      color="primary"
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: '1.25rem',
+                        textAlign: 'left'
+                      }}
+                    >
+                      שעות פעילות
+                    </Typography>
+                  </Box>
                   <Box
                     sx={{
                       p: 2,
@@ -447,16 +463,6 @@ export const Contact = () => {
                   >
                     <Clock size={28} color="#D4A5A5" />
                   </Box>
-                  <Typography 
-                    variant="h5" 
-                    color="primary" 
-                    sx={{ 
-                      fontWeight: 700,
-                      fontSize: '1.25rem'
-                    }}
-                  >
-                    שעות פעילות
-                  </Typography>
                 </Box>
                 
                 <Box sx={{ textAlign: isRTL ? 'right' : 'left', space: 2 }}>
