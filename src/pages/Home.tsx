@@ -106,7 +106,7 @@ export const Home = () => {
         />
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Box sx={{ textAlign: isRTL ? 'right' : 'left' }}>
-            <DebugTooltip jsonPath="animation_text.json > introduction.name">
+            <DebugTooltip jsonPath="home.name (i18n)">
               <Typography
                 variant="h1"
                 sx={{
@@ -117,14 +117,14 @@ export const Home = () => {
                   mb: 2
                 }}
               >
-                מאריאנה שחם
+                {t('home.name')}
               </Typography>
             </DebugTooltip>
-            
+
             <DebugTooltip jsonPath="home.subtitle (i18n)">
               <Typography
                 variant="h4"
-                sx={{ 
+                sx={{
                   color: heroDesign.textColor,
                   textShadow: heroDesign.textColor === 'white' ? '2px 2px 4px rgba(0,0,0,0.9)' : 'none',
                   fontWeight: 'bold'
@@ -133,7 +133,7 @@ export const Home = () => {
                 maxWidth="800px"
                 lineHeight={1.4}
               >
-                לידה מנצחת - מרגע ההכנה עד החיבוק הראשון ואחריו, יד ביד איתך כל הדרך
+                {t('home.subtitle')}
               </Typography>
             </DebugTooltip>
 
@@ -167,15 +167,15 @@ export const Home = () => {
       <Box sx={{ py: 8, backgroundColor: 'rgba(212, 165, 165, 0.05)' }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
-            <DebugTooltip jsonPath="animation_text.json > services.title">
+            <DebugTooltip jsonPath="home.servicesTitle (i18n)">
               <Typography variant="h3" color="primary" sx={{ mb: 4, fontWeight: 'bold' }}>
-                כל המקצועיות במקום אחד
+                {t('home.servicesTitle')}
               </Typography>
             </DebugTooltip>
-            
-            <DebugTooltip jsonPath="animation_text.json > services.offerings">
+
+            <DebugTooltip jsonPath="home.servicesOfferings (i18n)">
               <Typography variant="h5" color="text.primary" sx={{ fontWeight: 500 }}>
-                הכנה ללידה בשיטת היפנובירת'ינג • הדרכת הנקה • הדרכת פרידה מהנקה • יעוץ שפת התינוקות דנסטן • ייעוץ שינה בגישת דנסטן • עיסוי תינוקות
+                {t('home.servicesOfferings')}
               </Typography>
             </DebugTooltip>
           </Box>

@@ -11,26 +11,27 @@ export const Contact = () => {
   const contactMethods = [
     {
       icon: <MessageCircle size={32} color="#D4A5A5" />,
-      title: 'WhatsApp',
+      title: t('contact.methods.whatsapp.title'),
       value: '052-620-5052',
       link: 'https://wa.me/972526205052',
-      description: 'מענה מהיר ונוח',
-      primary: true
+      description: t('contact.methods.whatsapp.description'),
+      primary: true,
+      recommended: t('contact.methods.whatsapp.recommended')
     },
     {
       icon: <Phone size={32} color="#D4A5A5" />,
-      title: 'טלפון',
+      title: t('contact.methods.phone.title'),
       value: '052-620-5052',
       link: 'tel:0526205052',
-      description: 'זמינה לשיחות בין השעות 9:00-20:00',
+      description: t('contact.methods.phone.description'),
       primary: false
     },
     {
       icon: <Mail size={32} color="#D4A5A5" />,
-      title: 'אימייל',
-      value: 'maryza1982@gmail.com',
-      link: 'mailto:maryza1982@gmail.com',
-      description: 'מענה תוך 24 שעות',
+      title: t('contact.methods.email.title'),
+      value: t('contact.methods.email.value'),
+      link: `mailto:${t('contact.methods.email.value')}`,
+      description: t('contact.methods.email.description'),
       primary: false
     }
   ];
@@ -38,26 +39,25 @@ export const Contact = () => {
   const socialLinks = [
     {
       icon: <Instagram size={28} color="#D4A5A5" />,
-      title: 'Instagram',
-      handle: '@mariana.shaham',
+      title: t('contact.social.instagram.title'),
+      handle: t('contact.social.instagram.handle'),
       link: 'https://www.instagram.com/mariana.shaham/',
-      description: 'עדכונים, טיפים ותכנים מועילים',
-      followers: '2.5K עוקבים'
+      description: t('contact.social.instagram.description'),
+      followers: t('contact.social.instagram.followers')
     },
     {
       icon: <Users size={28} color="#D4A5A5" />,
-      title: 'Facebook',
-      handle: '@mary.shaham',
+      title: t('contact.social.facebook.title'),
+      handle: t('contact.social.facebook.handle'),
       link: 'https://www.facebook.com/mary.shaham',
-      description: 'עמוד הפייסבוק הרשמי',
-      followers: '1.8K עוקבים'
+      description: t('contact.social.facebook.description'),
+      followers: t('contact.social.facebook.followers')
     },
     {
       icon: <Users size={28} color="#D4A5A5" />,
-      title: 'האיגוד הישראלי למקצועות ההנקה',
-      handle: 'פרופיל מקצועי',
+      title: t('contact.social.ialp.title'),
+      handle: t('contact.social.ialp.handle'),
       link: 'https://ialp.org.il/counselors/%D7%9E%D7%90%D7%A8%D7%99%D7%90%D7%A0%D7%94-%D7%A9%D7%97%D7%9D/',
-      // description: 'אישור מקצועי ואמינות',
       verified: true
     }
   ];
@@ -113,10 +113,10 @@ export const Contact = () => {
               }}
             >
               <Box sx={{ mb: 5 }}>
-                <Typography 
-                  variant="h5" 
-                  color="primary" 
-                  sx={{ 
+                <Typography
+                  variant="h5"
+                  color="primary"
+                  sx={{
                     fontWeight: 700,
                     textAlign: isRTL ? 'right' : 'left',
                     fontSize: { xs: '1.5rem', md: '1.75rem' },
@@ -124,7 +124,7 @@ export const Contact = () => {
                     lineHeight: 1.2
                   }}
                 >
-                  דרכי התקשרות
+                  {t('contact.contactWays')}
                 </Typography>
                 <Typography 
                   variant="body1" 
@@ -210,8 +210,8 @@ export const Contact = () => {
                               {method.title}
                             </Typography>
                             {method.primary && (
-                              <Chip 
-                                label="מומלץ" 
+                              <Chip
+                                label={method.recommended}
                                 size="small" 
                                 sx={{ 
                                   backgroundColor: 'rgba(212, 165, 165, 0.15)',
@@ -279,7 +279,7 @@ export const Contact = () => {
                 
                 <Box sx={{ flex: 1, textAlign: isRTL ? 'right' : 'left' }}>
                   <Typography variant="h6" color="primary" sx={{ fontWeight: 700, mb: 1, fontSize: '1.1rem' }}>
-                    מיקום
+                    {t('contact.location')}
                   </Typography>
                 </Box>
               </Box>
@@ -300,10 +300,10 @@ export const Contact = () => {
                   boxShadow: '0 8px 32px rgba(212, 165, 165, 0.12)'
                 }}
               >
-                <Typography 
-                  variant="h5" 
-                  color="primary" 
-                  sx={{ 
+                <Typography
+                  variant="h5"
+                  color="primary"
+                  sx={{
                     mb: 4,
                     fontWeight: 700,
                     textAlign: isRTL ? 'right' : 'left',
@@ -311,7 +311,7 @@ export const Contact = () => {
                     lineHeight: 1.2
                   }}
                 >
-                  עקבי אחריי
+                  {t('contact.followMe')}
                 </Typography>
                 
                 {socialLinks.map((social, index) => (
@@ -451,7 +451,7 @@ export const Contact = () => {
                         lineHeight: 1.2
                       }}
                     >
-                      שעות פעילות
+                      {t('contact.officeHours')}
                     </Typography>
                   </Box>
                   <Box
@@ -471,26 +471,26 @@ export const Contact = () => {
                 <Box sx={{ textAlign: isRTL ? 'right' : 'left', space: 2 }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2, p: 2, borderRadius: '8px', backgroundColor: 'rgba(212, 165, 165, 0.04)' }}>
                     <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                      ימים א׳-ה׳
+                      {t('contact.schedule.sundayToThursday')}
                     </Typography>
                     <Typography variant="body1" color="primary" sx={{ fontWeight: 600 }}>
-                      9:00-20:00
+                      {t('contact.schedule.sundayToThursdayHours')}
                     </Typography>
                   </Box>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2, p: 2, borderRadius: '8px', backgroundColor: 'rgba(212, 165, 165, 0.04)' }}>
                     <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                      יום ו׳
+                      {t('contact.schedule.friday')}
                     </Typography>
                     <Typography variant="body1" color="primary" sx={{ fontWeight: 600 }}>
-                      9:00-14:00
+                      {t('contact.schedule.fridayHours')}
                     </Typography>
                   </Box>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2, borderRadius: '8px', backgroundColor: 'rgba(158, 158, 158, 0.04)' }}>
                     <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                      שבת
+                      {t('contact.schedule.saturday')}
                     </Typography>
                     <Typography variant="body1" color="text.secondary" sx={{ fontWeight: 600 }}>
-                      סגור
+                      {t('contact.schedule.closed')}
                     </Typography>
                   </Box>
                 </Box>
@@ -526,9 +526,9 @@ export const Contact = () => {
                   <Quote size={32} color="#D4A5A5" style={{ opacity: 0.4 }} />
                 </Box>
                 
-                <Typography 
-                  variant="body1" 
-                  sx={{ 
+                <Typography
+                  variant="body1"
+                  sx={{
                     textAlign: isRTL ? 'right' : 'left',
                     lineHeight: 1.7,
                     fontStyle: 'italic',
@@ -539,7 +539,7 @@ export const Contact = () => {
                     zIndex: 1
                   }}
                 >
-                  "אני כאן ללוות אתכן בכל שלב של המסע - מההריון ועד ההורות המוקדמת. אל תהססו לפנות בכל שאלה או בקשה לייעוץ."
+                  {t('contact.quote')}
                 </Typography>
                 
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -552,22 +552,22 @@ export const Contact = () => {
                     }}
                   />
                   <Box>
-                    <Typography 
-                      variant="body1" 
-                      color="primary" 
-                      sx={{ 
+                    <Typography
+                      variant="body1"
+                      color="primary"
+                      sx={{
                         fontWeight: 700,
                         fontSize: '1rem'
                       }}
                     >
-                      מאריאנה שחם
+                      {t('contact.name')}
                     </Typography>
-                    <Typography 
-                      variant="body2" 
+                    <Typography
+                      variant="body2"
                       color="text.secondary"
                       sx={{ fontSize: '0.9rem' }}
                     >
-                      מדריכה מוסמכת ללידה והנקה
+                      {t('contact.role')}
                     </Typography>
                   </Box>
                 </Box>
